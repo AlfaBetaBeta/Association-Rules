@@ -199,3 +199,5 @@ vignettes/*.pdf
 /*_files/
 
 # End of https://www.toptal.com/developers/gitignore/api/python,jupyternotebooks,r
+
+.DS_Store
