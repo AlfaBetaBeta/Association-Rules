@@ -58,7 +58,6 @@ In this case, the following combinations of controlling metrics and thresholds a
 |    lift                              |       0.5        |         0.        |      0.1     |       0.4       |       c11     |
 |    lift                              |       0.5        |         0.        |      0.1     |       0.3       |       c12     |
 
- 
 
 |   Metric   | Metric threshold | Min. rule support | Min. support | Min. confidence | CombinationID |
 | :--------: | :--------------: | :---------------: | :----------: | :-------------: | :-----------: |
@@ -82,11 +81,62 @@ The resulting pandas DataFrames with the rules for each combination are stored l
 
 ## Visualisation and rule analysis
 
+The script `Association-Rule-Visualisation.R` reads in the synthetic dataset as well as the `csv` files stemming from `Apriori.ipynb`, generates a series of plots and stores them locally as per the path settings defined in the script. Same as with the notebook, it is meant to be executed sequentially to facilitate inspection by the user. In its current version, the script may need some manual adjusting should anything change in the notebook (e.g. the metric-threshold combinations) or if resorting to a different dataset for rule mining. Hence, the script requires careful inspection in such cases. Integrating the rule mining and the visualisation parts consistently to allow for a fully automated pipeline remains a desirable prospective development.
+
+As a preliminary step, the figures below show the distribution of courses over the ticket sample and the total count of courses per ticket, respectively. As the bars in the course histogram are normalised by the total number of tickets, they directly represent supports.
+
+<p align="middle">
+  <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/support-distribution.png" width=50% height=50%>
+</p>
+<p align="middle">
+  <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/courses-per-ticket.png" width=100% height=100%>
+</p>
+
+A salient feature of these figures, if the sample is assumed to be representative, is that the vast majority of trainees enrol in 2 or 3 courses, with these mostly being introductory to intermediate level (as inferred by the course name in the absence of syllabus information). There is no distinct clustering scheme in the course histogram, although the main approximate trend is for more specialised courses to have lower support. Minimum and maximum support roughly correspond to 4% and 40%, respectively. Benchmark minimum thresholds of 10% and 20% for support conveniently split the course set into subsets in proportion 2:1, which is used when setting lift as the controlling metric.
+
+In this regard, the figure below summarises the number of rules arising from various combinations of minimum threshold values for confidence and support, for a minimum lift threshold of 1.0 and 0.5, respectively. From its definition, lift has no interest for values just around 1.0, as this implies independence between the probabilities of occurrence of **A** and **C**, and hence no rule can sensibly associate them. Lift values notably above or below 1.0 bear greater interest because they are indicative of rules, by **A** being either reinforcing or detrimental in the occurrence of **C**, respectively.
+
+<p align="middle">
+  <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/rules_vs_thresholds1_metric_lift.png" width=50% height=50%>
+  <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/rules_vs_thresholds2_metric_lift.png" width=50% height=50%>
+</p>
+
+The bottom left point in the right figure (minimum support 0.1, minimum confidence 0.3; in short, combination c12) agglomerates 38 rules, which are unfolded below for all antecedents and consequents. A suitable mapping of colour by (*posterior*) confidence and size by lift has been applied to facilitate visual interpretation, and points with a red boundary represent rules with a lift below 1.0.
+
+<img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/lift_c12.png" width=100% height=100%>
+
+The rules with the most favourable combination of confidence and lift (i.e. darker and larger points in the grid) are the following:
+
+* {Building Predictive Models, Intro to CHAID} => {Market Segmentation}
+* {Classification and Clustering} => {Building Predictive Models}
+* {Market Segmentation} => {Building Predictive Models}
+* {Market Segmentation} => {Intro to CHAID}
+* {Tables} => {Intermediate Techniques}
+
+Detrimental rules have almost exclusively {Intro to Statistic platform} as consequent, although the one with the largest lift points to {Intermediate Techniques}. This is partially expected since these are the two courses with the largest support and might therefore display the greatest tendency to ‘leak’ into rules. It is somewhat surprising, however, that they are both popular and yet detrimental to each other, given that (by name) they would not necessarily be considered mutually substitutive. This could point to syllabus overlaps that were not anticipated and would need addressing. The antecedent itemsets are mostly made of one course, hence leading to 1:1 rules of significant support, which is characteristic when resorting to lift as metric.
+
+In order to assess rules with lower *prior* confidences and greater antecedent itemset size, it is convenient to change metric. In this case, the confidence ratio is favoured as it is well suited for such cases. The figure below shows a compact summary of the 508 rules found for the minimum thresholds corresponding to combination c6. All rules focus on 12 consequents, each represented by a point of size and brightness proportional to the number of rules linked to it. The coordinates of each point are the average confidence and lift over all rules associating to that consequent. {Market Segmentation} and {Classification and Clustering} clearly gather rules the most (239 combined), averaging an antecedent itemset size of 3 with roughly 0.02 support. Their average confidence is approximately 0.8 and 0.7, respectively, and their average lift is above 5 in both cases. This pair of 'agglomerated' rules are deemed of value, as they are representative of a variety of learning paths that ultimately intersect in a common field of interest (machine learning).
+
+<img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/confidence_ratio_lift_vs_confidence_c6.png" width=100% height=100%>
+
+As anticipated, when resorting to confidence ratio as a metric, a large number of rules applied on low supports is found. For comparison with the figure above, additional visualisations arising from different threshold settings are shown below, illustrating in any case the same general pattern.
+
+<p align="middle">
+  <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/confidence_ratio_lift_vs_confidence_c4.png" width=50% height=50%>
+  <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/confidence_ratio_lift_vs_confidence_c7.png" width=50% height=50%>
+</p>
+<p align="middle">
+  <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/confidence_ratio_lift_vs_confidence_c13.png" width=50% height=50%>
+  <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/confidence_ratio_lift_vs_confidence_c14.png" width=50% height=50%>
+</p>
+
+
+## Conclusions
+
 Under construction...
 
 
+## Appendix
 
-
-
-
+Under construction...
 
