@@ -2,7 +2,12 @@
 
 **Tl;dr**: The pipeline for association rule mining can be inspected and adjusted to user needs in `Apriori.ipynb`. The functions involved therein are thoroughly documented for ease of use. The visualisation of mined rules can be done via `Association-Rule-Visualisation.R`, although changes in the notebook may require manual tweaks in the R script.
 
-(TODO: ToC)
+* [Introduction](https://github.com/AlfaBetaBeta/Association-Rules#introduction)
+* [Scope and definitions](https://github.com/AlfaBetaBeta/Association-Rules#scope-and-definitions)
+* [Rule mining](https://github.com/AlfaBetaBeta/Association-Rules#rule-mining)
+* [Visualisation and rule analysis](https://github.com/AlfaBetaBeta/Association-Rules#visualisation-and-rule-analysis)
+* [Conclusions](https://github.com/AlfaBetaBeta/Association-Rules#conclusions)
+* [Appendix](https://github.com/AlfaBetaBeta/Association-Rules#appendix)
 
 
 ## Introduction
@@ -100,7 +105,6 @@ In this regard, the figure below summarises the number of rules arising from var
 
 <p align="middle">
   <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/rules_vs_thresholds1_metric_lift.png" width=45% height=45%>
-  <br/>
   <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/rules_vs_thresholds2_metric_lift.png" width=45% height=45%>
 </p>
 
