@@ -86,10 +86,10 @@ The script `Association-Rule-Visualisation.R` reads in the synthetic dataset as 
 As a preliminary step, the figures below show the distribution of courses over the ticket sample and the total count of courses per ticket, respectively. As the bars in the course histogram are normalised by the total number of tickets, they directly represent supports.
 
 <p align="middle">
-  <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/support-distribution.png" width=50% height=50%>
+  <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/support-distribution.png" width=100% height=100%>
 </p>
 <p align="middle">
-  <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/courses-per-ticket.png" width=100% height=100%>
+  <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/courses-per-ticket.png" width=50% height=50%>
 </p>
 
 A salient feature of these figures, if the sample is assumed to be representative, is that the vast majority of trainees enrol in 2 or 3 courses, with these mostly being introductory to intermediate level (as inferred by the course name in the absence of syllabus information). There is no distinct clustering scheme in the course histogram, although the main approximate trend is for more specialised courses to have lower support. Minimum and maximum support roughly correspond to 4% and 40%, respectively. Benchmark minimum thresholds of 10% and 20% for support conveniently split the course set into subsets in proportion 2:1, which is used when setting lift as the controlling metric.
@@ -97,8 +97,8 @@ A salient feature of these figures, if the sample is assumed to be representativ
 In this regard, the figure below summarises the number of rules arising from various combinations of minimum threshold values for confidence and support, for a minimum lift threshold of 1.0 and 0.5, respectively. From its definition, lift has no interest for values just around 1.0, as this implies independence between the probabilities of occurrence of **A** and **C**, and hence no rule can sensibly associate them. Lift values notably above or below 1.0 bear greater interest because they are indicative of rules, by **A** being either reinforcing or detrimental in the occurrence of **C**, respectively.
 
 <p align="middle">
-  <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/rules_vs_thresholds1_metric_lift.png" width=50% height=50%>
-  <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/rules_vs_thresholds2_metric_lift.png" width=50% height=50%>
+  <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/rules_vs_thresholds1_metric_lift.png" width=40% height=40%>
+  <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/rules_vs_thresholds2_metric_lift.png" width=40% height=40%>
 </p>
 
 The bottom left point in the right figure (minimum support 0.1, minimum confidence 0.3; in short, combination c12) agglomerates 38 rules, which are unfolded below for all antecedents and consequents. A suitable mapping of colour by (*posterior*) confidence and size by lift has been applied to facilitate visual interpretation, and points with a red boundary represent rules with a lift below 1.0.
@@ -121,14 +121,11 @@ In order to assess rules with lower *prior* confidences and greater antecedent i
 
 As anticipated, when resorting to confidence ratio as a metric, a large number of rules applied on low supports is found. For comparison with the figure above, additional visualisations arising from different threshold settings are shown below, illustrating in any case the same general pattern.
 
-<p align="middle">
-  <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/confidence_ratio_lift_vs_confidence_c4.png" width=50% height=50%>
-  <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/confidence_ratio_lift_vs_confidence_c7.png" width=50% height=50%>
-</p>
-<p align="middle">
-  <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/confidence_ratio_lift_vs_confidence_c13.png" width=50% height=50%>
-  <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/confidence_ratio_lift_vs_confidence_c14.png" width=50% height=50%>
-</p>
+<img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/confidence_ratio_lift_vs_confidence_c4.png" width=100% height=100%>
+<img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/confidence_ratio_lift_vs_confidence_c7.png" width=100% height=100%>
+<img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/confidence_ratio_lift_vs_confidence_c13.png" width=100% height=100%>
+<img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/confidence_ratio_lift_vs_confidence_c9.png" width=100% height=100%>
+
 
 
 ## Conclusions
