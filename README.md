@@ -88,8 +88,8 @@ As a preliminary step, the figures below show the distribution of courses over t
 <p align="middle">
   <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/support-distribution.png" width=100% height=100%>
 </p>
-  
-  
+  \
+  \
 <p align="middle">
   <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/courses-per-ticket.png" width=50% height=50%>
 </p>
