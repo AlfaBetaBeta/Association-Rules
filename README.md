@@ -100,6 +100,7 @@ In this regard, the figure below summarises the number of rules arising from var
 
 <p align="middle">
   <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/rules_vs_thresholds1_metric_lift.png" width=45% height=45%>
+  <br/>
   <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/rules_vs_thresholds2_metric_lift.png" width=45% height=45%>
 </p>
 
@@ -124,8 +125,11 @@ In order to assess rules with lower *prior* confidences and greater antecedent i
 As anticipated, when resorting to confidence ratio as a metric, a large number of rules applied on low supports is found. For comparison with the figure above, additional visualisations arising from different threshold settings are shown below, illustrating in any case the same general pattern.
 
 <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/confidence_ratio_lift_vs_confidence_c4.png" width=100% height=100%>
+<br/>
 <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/confidence_ratio_lift_vs_confidence_c7.png" width=100% height=100%>
+<br/>
 <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/confidence_ratio_lift_vs_confidence_c13.png" width=100% height=100%>
+<br/>
 <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/confidence_ratio_lift_vs_confidence_c9.png" width=100% height=100%>
 
 
