@@ -88,7 +88,8 @@ As a preliminary step, the figures below show the distribution of courses over t
 <p align="middle">
   <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/support-distribution.png" width=100% height=100%>
 </p>
-
+  
+  
 <p align="middle">
   <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/courses-per-ticket.png" width=50% height=50%>
 </p>
@@ -97,7 +98,7 @@ A salient feature of these figures, if the sample is assumed to be representativ
 
 In this regard, the figure below summarises the number of rules arising from various combinations of minimum threshold values for confidence and support, for a minimum lift threshold of 1.0 and 0.5, respectively. From its definition, lift has no interest for values just around 1.0, as this implies independence between the probabilities of occurrence of **A** and **C**, and hence no rule can sensibly associate them. Lift values notably above or below 1.0 bear greater interest because they are indicative of rules, by **A** being either reinforcing or detrimental in the occurrence of **C**, respectively.
 
-<p align="just">
+<p align="middle">
   <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/rules_vs_thresholds1_metric_lift.png" width=45% height=45%>
   <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/rules_vs_thresholds2_metric_lift.png" width=45% height=45%>
 </p>
