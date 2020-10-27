@@ -43,20 +43,20 @@ The optimisation strategies from [mlxtend](https://github.com/rasbt/mlxtend/tree
 
 In this case, the following combinations of controlling metrics and thresholds are used for rule mining:
 
-| Metric | Metric threshold | Min. rule support | Min. support | Min. confidence | CombinationID |
-| :----: | :--------------: | :---------------: | :----------: | :-------------: | :-----------: |
-|  lift  |       1.0        |         0.        |      0.2     |       0.5       |       c1      |
-|  lift  |       1.0        |         0.        |      0.2     |       0.4       |       c2      |
-|  lift  |       1.0        |         0.        |      0.2     |       0.3       |       c3      |
-|  lift  |       1.0        |         0.        |      0.1     |       0.5       |       c4      |
-|  lift  |       1.0        |         0.        |      0.1     |       0.4       |       c5      |
-|  lift  |       1.0        |         0.        |      0.1     |       0.3       |       c6      |
-|  lift  |       0.5        |         0.        |      0.2     |       0.5       |       c7      |
-|  lift  |       0.5        |         0.        |      0.2     |       0.4       |       c8      |
-|  lift  |       0.5        |         0.        |      0.2     |       0.3       |       c9      |
-|  lift  |       0.5        |         0.        |      0.1     |       0.5       |       c10     |
-|  lift  |       0.5        |         0.        |      0.1     |       0.4       |       c11     |
-|  lift  |       0.5        |         0.        |      0.1     |       0.3       |       c12     |
+|    Metric.   | Metric threshold | Min. rule support | Min. support | Min. confidence | CombinationID |
+| :----------: | :--------------: | :---------------: | :----------: | :-------------: | :-----------: |
+|    lift      |       1.0        |         0.        |      0.2     |       0.5       |       c1      |
+|    lift      |       1.0        |         0.        |      0.2     |       0.4       |       c2      |
+|    lift      |       1.0        |         0.        |      0.2     |       0.3       |       c3      |
+|    lift      |       1.0        |         0.        |      0.1     |       0.5       |       c4      |
+|    lift      |       1.0        |         0.        |      0.1     |       0.4       |       c5      |
+|    lift      |       1.0        |         0.        |      0.1     |       0.3       |       c6      |
+|    lift      |       0.5        |         0.        |      0.2     |       0.5       |       c7      |
+|    lift      |       0.5        |         0.        |      0.2     |       0.4       |       c8      |
+|    lift      |       0.5        |         0.        |      0.2     |       0.3       |       c9      |
+|    lift      |       0.5        |         0.        |      0.1     |       0.5       |       c10     |
+|    lift      |       0.5        |         0.        |      0.1     |       0.4       |       c11     |
+|    lift      |       0.5        |         0.        |      0.1     |       0.3       |       c12     |
 
 
 |   Metric   | Metric threshold | Min. rule support | Min. support | Min. confidence | CombinationID |
