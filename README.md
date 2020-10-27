@@ -97,9 +97,9 @@ A salient feature of these figures, if the sample is assumed to be representativ
 
 In this regard, the figure below summarises the number of rules arising from various combinations of minimum threshold values for confidence and support, for a minimum lift threshold of 1.0 and 0.5, respectively. From its definition, lift has no interest for values just around 1.0, as this implies independence between the probabilities of occurrence of **A** and **C**, and hence no rule can sensibly associate them. Lift values notably above or below 1.0 bear greater interest because they are indicative of rules, by **A** being either reinforcing or detrimental in the occurrence of **C**, respectively.
 
-<p align="justify">
-  <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/rules_vs_thresholds1_metric_lift.png" width=40% height=40%>
-  <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/rules_vs_thresholds2_metric_lift.png" width=40% height=40%>
+<p align="just">
+  <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/rules_vs_thresholds1_metric_lift.png" width=45% height=45%>
+  <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/rules_vs_thresholds2_metric_lift.png" width=45% height=45%>
 </p>
 
 The bottom left point in the right figure (minimum support 0.1, minimum confidence 0.3; in short, combination c12) agglomerates 38 rules, which are unfolded below for all antecedents and consequents. A suitable mapping of colour by (*posterior*) confidence and size by lift has been applied to facilitate visual interpretation, and points with a red boundary represent rules with a lift below 1.0.
