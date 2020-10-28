@@ -163,11 +163,11 @@ Substitution of <img src="https://render.githubusercontent.com/render/math?math=
 
 ### Detailed definitions and probabilistic interpretation of association parameters
 
-More formally, an association rule is defined as <img src="https://render.githubusercontent.com/render/math?math=\left{\bm{A}\right} \Rightarrow \left{\bm{C}\right}">, where ({**A**}, {**C**})⊆{**I**}. That is, {**A**} and {**C**} are disjoint itemsets containing part or at most the entire population of items {**I**}.
+More formally, an association rule is defined as <img src="https://render.githubusercontent.com/render/math?math=\left{\boldsymbol{A}\right} \Rightarrow \left{\boldsymbol{C}\right}">, where ({**A**}, {**C**})⊆{**I**}. That is, {**A**} and {**C**} are disjoint itemsets containing part or at most the entire population of items {**I**}.
 
 Items are in general subject to transactions (in the present context items being courses and transactions being enrolments). Based on this, support can be defined as:
 
-<img src="https://render.githubusercontent.com/render/math?math=Support(\bm{X})=\frac{transactions t/ \bm{X} \subseteqt}{T}">
+<img src="https://render.githubusercontent.com/render/math?math=Support(\boldsymbol{X})=\frac{transactions t/ \boldsymbol{X} \subseteq t}{T}">
 
 Under construction...
 
