@@ -163,7 +163,8 @@ Substitution of <img src="https://render.githubusercontent.com/render/math?math=
 
 ### Detailed definitions and probabilistic interpretation of association parameters
 
-{A}<img src="https://render.githubusercontent.com/render/math?math==>">{C}
+More formally, an association rule is defined as {**A**} => {**C**}, where ({**A**}, {**C**})<img src="https://render.githubusercontent.com/render/math?math=\subseteq">{**I**}. That is, {**A**} and {**C**} are disjoint itemsets containing part or at most the entire population of items {**I**}.
+\subseteq
 
 Under construction...
 
