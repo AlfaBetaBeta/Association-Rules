@@ -167,7 +167,7 @@ More formally, an association rule is defined as <img src="https://render.github
 
 Items are in general subject to transactions (in the present context items being courses and transactions being enrolments). Based on this, support can be defined as:
 
-<img src="https://render.githubusercontent.com/render/math?math=\textnormal{Support}(\boldsymbol{X})=\frac{transactions\enspace t/ \boldsymbol{X} \subseteq t}{T}">
+<img src="https://render.githubusercontent.com/render/math?math=\text{Support}(\boldsymbol{X})=\frac{transactions\enspace t/ \boldsymbol{X} \subseteq t}{T}">
 
 Under construction...
 
