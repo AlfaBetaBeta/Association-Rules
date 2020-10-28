@@ -19,13 +19,13 @@ Within the current educational framework, with proliferation of free online reso
 
 The present study constitutes, in essence, an association rule analysis (ARA) performed on a synthetic sample of 'historical' data (`Training_courses_2019.xlsx`). This sample dataset comprises 349 entries (tickets) in tabular format, describing enrolment by ticket on each of the 18 courses currently offered in as many columns via a binary indicator (`0` = not enrolled, `1` = enrolled).
 
-The notation followed for any rule throughout the study is {**A**} => {**C**}, whereby **A** and **C** stand for *antecedent* and *consequent*, respectively. A rule is meant to be conceptually understood as *‘if {**A**} then {**C**}’* of probabilistic rather than logical nature. Although in general **A** and **C** may constitute itemsets (sets of courses) of arbitrary size within the boundaries of the available items, it is decided here to restrict the ARA to single consequents and limit the size of **A** for convenience, i.e. rules of the type *‘if {up to five courses} then {one course}’*.
+The notation followed for any rule throughout the study is {**A**} => {**C**}, whereby {**A**} and {**C**} stand for *antecedent* and *consequent*, respectively. A rule is meant to be conceptually understood as *‘if {**A**} then {**C**}’* of probabilistic rather than logical nature. Although in general {**A**} and {**C**} may constitute itemsets (sets of courses) of arbitrary size within the boundaries of the available items, it is decided here to restrict the ARA to single consequents and limit the size of {**A**} for convenience, i.e. rules of the type *‘if {up to five courses} then {one course}’*.
 
 Within the scope of this study, reference is frequently made to some indicators and metrics quantifying the relevance of a rule. These are concisely summarised here for ease of readability, whereby more thorough definitions and additional nuances can be found in the [Appendix](https://github.com/AlfaBetaBeta/Association-Rules#appendix):
 
-* Support(**X**):number of enrolments on course(s) **X** with respect to the total amount of tickets. When **X**=**A**, **X** might represent an itemset. When **X**=**C**, **X** signifies the support of a single consequent in the present context. This is called *prior* confidence.
+* Support(**X**):number of enrolments on course(s) {**X**} with respect to the total amount of tickets. When {**X**}={**A**}, {**X**} might represent an itemset. When {**X**}={**C**}, {**X**} signifies the support of a single consequent in the present context. This is called *prior* confidence.
 
-* Confidence({**A**} => {**C**}): number of enrolments on courses **A** and **C** with respect to the number of enrolments on course(s) **A**. This is called *posterior* confidence.
+* Confidence({**A**} => {**C**}): number of enrolments on courses {**A**} and {**C**} with respect to the number of enrolments on course(s) {**A**}. This is called *posterior* confidence.
 
 * Lift({**A**} => {**C**}): ratio of *posterior* to *prior* confidence.
 
