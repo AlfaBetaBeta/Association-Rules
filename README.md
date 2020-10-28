@@ -163,5 +163,7 @@ Substitution of <img src="https://render.githubusercontent.com/render/math?math=
 
 ### Detailed definitions and probabilistic interpretation of association parameters
 
+{A}<img src="https://render.githubusercontent.com/render/math?math==>">{C}
+
 Under construction...
 
