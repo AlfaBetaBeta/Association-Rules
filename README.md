@@ -163,7 +163,7 @@ Substitution of <img src="https://render.githubusercontent.com/render/math?math=
 
 ### Detailed definitions and probabilistic interpretation of association parameters
 
-More formally, an association rule is defined as <img src="https://render.githubusercontent.com/render/math?math=\begin{aligned}[b]\{\boldsymbol{A}\} \implies \{\boldsymbol{C}\}\end{aligned}">, where <img src="https://render.githubusercontent.com/render/math?math=(\{\boldsymbol{A}\},\{\boldsymbol{C}\}) \subseteq \{\boldsymbol{I}\}">. That is, <img src="https://render.githubusercontent.com/render/math?math=\{\boldsymbol{A}\}"> and <img src="https://render.githubusercontent.com/render/math?math=\{\boldsymbol{C}\}"> are disjoint itemsets containing part or at most the entire population of items <img src="https://render.githubusercontent.com/render/math?math=\{\boldsymbol{I}\}">.
+More formally, an association rule is defined as <img src="https://render.githubusercontent.com/render/math?math=\{\boldsymbol{A}\} \implies \{\boldsymbol{C}\}">, where <img src="https://render.githubusercontent.com/render/math?math=(\{\boldsymbol{A}\},\{\boldsymbol{C}\}) \subseteq \{\boldsymbol{I}\}">. That is, <img src="https://render.githubusercontent.com/render/math?math=\{\boldsymbol{A}\}"> and <img src="https://render.githubusercontent.com/render/math?math=\{\boldsymbol{C}\}"> are disjoint itemsets containing part or at most the entire population of items <img src="https://render.githubusercontent.com/render/math?math=\{\boldsymbol{I}\}">.
 
 Items are in general subject to transactions (in the present context items being courses and transactions being enrolments). Based on this, support can be defined as:
 
@@ -175,3 +175,10 @@ Similarly, confidence can be rewritten as:
 
 <img src="https://render.githubusercontent.com/render/math?math=\text{Confidence}(\{\boldsymbol{A}\} \implies \{\boldsymbol{C}\})=\frac{\text{Support}(\boldsymbol{A}\cup \boldsymbol{C})}{\text{Support}(\boldsymbol{A})}">
 
+which allows to interpret it as an estimate of conditional probability, i.e. the probability that a randomly selected enrolment will contain all courses in <img src="https://render.githubusercontent.com/render/math?math=\{\boldsymbol{C}\}"> given the enrolment in all courses in <img src="https://render.githubusercontent.com/render/math?math=\{\boldsymbol{A}\}">.
+
+Finally, as lift is defined in terms of the parameters above:
+
+<img src="https://render.githubusercontent.com/render/math?math=\text{Lift}(\{\boldsymbol{A}\} \implies \{\boldsymbol{C}\})=\frac{\text{Confidence}(\boldsymbol{A}\implies \boldsymbol{C})}{\text{Support}(\boldsymbol{C})}">
+
+it can be readily interpreted as an estimated measure of the increase in probability of enrolment in courses in <img src="https://render.githubusercontent.com/render/math?math=\{\boldsymbol{C}\}"> given enrolment in courses in <img src="https://render.githubusercontent.com/render/math?math=\{\boldsymbol{A}\}">.
