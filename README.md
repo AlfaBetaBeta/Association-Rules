@@ -163,7 +163,7 @@ Substitution of <img src="https://render.githubusercontent.com/render/math?math=
 
 ### Detailed definitions and probabilistic interpretation of association parameters
 
-More formally, an association rule is defined as <img src="https://render.githubusercontent.com/render/math?math=\begin{aligned}[t]\{\boldsymbol{A}\} \implies \{\boldsymbol{C}\}\end{aligned}">, where <img src="https://render.githubusercontent.com/render/math?math=(\{\boldsymbol{A}\},\{\boldsymbol{C}\}) \subseteq \{\boldsymbol{I}\}">. That is, <img src="https://render.githubusercontent.com/render/math?math=\{\boldsymbol{A}\}"> and <img src="https://render.githubusercontent.com/render/math?math=\{\boldsymbol{C}\}"> are disjoint itemsets containing part or at most the entire population of items <img src="https://render.githubusercontent.com/render/math?math=\{\boldsymbol{I}\}">.
+More formally, an association rule is defined as <img src="https://render.githubusercontent.com/render/math?math=\begin{aligned}[b]\{\boldsymbol{A}\} \implies \{\boldsymbol{C}\}\end{aligned}">, where <img src="https://render.githubusercontent.com/render/math?math=(\{\boldsymbol{A}\},\{\boldsymbol{C}\}) \subseteq \{\boldsymbol{I}\}">. That is, <img src="https://render.githubusercontent.com/render/math?math=\{\boldsymbol{A}\}"> and <img src="https://render.githubusercontent.com/render/math?math=\{\boldsymbol{C}\}"> are disjoint itemsets containing part or at most the entire population of items <img src="https://render.githubusercontent.com/render/math?math=\{\boldsymbol{I}\}">.
 
 Items are in general subject to transactions (in the present context items being courses and transactions being enrolments). Based on this, support can be defined as:
 
