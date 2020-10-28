@@ -101,7 +101,7 @@ As a preliminary step, the figures below show the distribution of courses over t
 
 A salient feature of these figures, if the sample is assumed to be representative, is that the vast majority of trainees enrol in 2 or 3 courses, with these mostly being introductory to intermediate level (as inferred by the course name in the absence of syllabus information). There is no distinct clustering scheme in the course histogram, although the main approximate trend is for more specialised courses to have lower support. Minimum and maximum support roughly correspond to 0.04 and 0.4, respectively. Benchmark minimum thresholds of 0.1 and 0.2 for support conveniently split the course set into subsets in proportion 2:1, which is used when setting lift as the controlling metric.
 
-In this regard, the figure below summarises the number of rules arising from various combinations of minimum threshold values for confidence and support, for a minimum lift threshold of 1.0 and 0.5, respectively. From its definition, lift has no interest for values just around 1.0, as this implies independence between the probabilities of occurrence of **A** and **C**, and hence no rule can sensibly associate them. Lift values notably above or below 1.0 bear greater interest because they are indicative of rules, by **A** being either reinforcing or detrimental in the occurrence of **C**, respectively.
+In this regard, the figure below summarises the number of rules arising from various combinations of minimum threshold values for confidence and support, for a minimum lift threshold of 1.0 and 0.5, respectively. From its definition, lift has no interest for values just around 1.0, as this implies independence between the probabilities of occurrence of {**A**} and {**C**}, and hence no rule can sensibly associate them. Lift values notably above or below 1.0 bear greater interest because they are indicative of rules, by {**A**} being either reinforcing or detrimental in the occurrence of {**C**}, respectively.
 
 <p align="middle">
   <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/rules_vs_thresholds1_metric_lift.png" width=45% height=45%>
@@ -163,11 +163,15 @@ Substitution of <img src="https://render.githubusercontent.com/render/math?math=
 
 ### Detailed definitions and probabilistic interpretation of association parameters
 
-More formally, an association rule is defined as <img src="https://render.githubusercontent.com/render/math?math=\{\boldsymbol{A}\} \implies \{\boldsymbol{C}\}">, where <img src="https://render.githubusercontent.com/render/math?math=(\{\boldsymbol{A}\},\{\boldsymbol{C}\}) \subseteq \{\boldsymbol{I}\}">. That is, {**A**} and {**C**} are disjoint itemsets containing part or at most the entire population of items {**I**}.
+More formally, an association rule is defined as <img src="https://render.githubusercontent.com/render/math?math=\{\boldsymbol{A}\} \implies \{\boldsymbol{C}\}">, where <img src="https://render.githubusercontent.com/render/math?math=(\{\boldsymbol{A}\},\{\boldsymbol{C}\}) \subseteq \{\boldsymbol{I}\}">. That is, <img src="https://render.githubusercontent.com/render/math?math=\{\boldsymbol{A}\}"> and <img src="https://render.githubusercontent.com/render/math?math=\{\boldsymbol{C}\}"> are disjoint itemsets containing part or at most the entire population of items <img src="https://render.githubusercontent.com/render/math?math=\{\boldsymbol{I}\}">.
 
 Items are in general subject to transactions (in the present context items being courses and transactions being enrolments). Based on this, support can be defined as:
 
-<img src="https://render.githubusercontent.com/render/math?math=\text{Support}(\boldsymbol{X})=\frac{transactions\enspace t/ \boldsymbol{X} \subseteq t}{T}">
+<img src="https://render.githubusercontent.com/render/math?math=\text{Support}(\boldsymbol{X})=\frac{\text{transactions}\enspace t/ \boldsymbol{X} \subseteq t}{T}">
 
-Under construction...
+where <img src="https://render.githubusercontent.com/render/math?math=\{\boldsymbol{X}\}"> is an arbitrary itemset contained in <img src="https://render.githubusercontent.com/render/math?math=\{\boldsymbol{I}\}"> and *T* is the set of all transactions. Support can hence be interpreted as a marginal probability estimator, i.e. in the present context it estimates the probability that a randomly selected enrolment will contain all courses in <img src="https://render.githubusercontent.com/render/math?math=\{\boldsymbol{X}\}">.
+
+Similarly, confidence can be rewritten as:
+
+<img src="https://render.githubusercontent.com/render/math?math=\text{Confidence}(\{\boldsymbol{A}\} \implies \{\boldsymbol{C}\})=\frac{\text{Support}(\boldsymbol{A}\cup \boldsymbol{C})}{\text{Support}(\boldsymbol{A})}">
 
