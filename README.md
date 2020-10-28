@@ -151,13 +151,13 @@ Based on the preliminary results of ARA presented so far, and subject to further
 
 ### Explicit expressions of exponential number of rules and the powerset over all transactions
 
-Given a total number of items N, the set of all possible itemsets is the power set over N, i.e. the number of itemsets (excluding empty sets) follows the exponential rule:
+Given a total number of items *N*, the set of all possible itemsets is the power set over *N*, i.e. the number of itemsets (excluding empty sets) follows the exponential rule:
 
-<img src="https://render.githubusercontent.com/render/math?math=2^{N}-1">
+<img src="https://render.githubusercontent.com/render/math?math=2^{N} - 1">
 
-The number of rules over all itemsets in the power set over N also follows an exponential rule, as per below:
+The number of rules over all itemsets in the power set over *N* also follows an exponential rule, as per below:
 
-<img src="https://render.githubusercontent.com/render/math?math=3^{N}-2^{N+1}+1">
+<img src="https://render.githubusercontent.com/render/math?math=3^{N} - 2^{N+1} + 1">
 
 Substitution of <img src="https://render.githubusercontent.com/render/math?math=N=18"> in the expressions above directly yields the results mentioned in the [rule mining](https://github.com/AlfaBetaBeta/Association-Rules#rule-mining) section.
 
