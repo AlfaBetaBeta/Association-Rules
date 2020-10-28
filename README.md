@@ -21,7 +21,7 @@ The present study constitutes, in essence, an association rule analysis (ARA) pe
 
 The notation followed for any rule throughout the study is {**A**} => {**C**}, whereby **A** and **C** stand for *antecedent* and *consequent*, respectively. A rule is meant to be conceptually understood as *‘if {**A**} then {**C**}’* of probabilistic rather than logical nature. Although in general **A** and **C** may constitute itemsets (sets of courses) of arbitrary size within the boundaries of the available items, it is decided here to restrict the ARA to single consequents and limit the size of **A** for convenience, i.e. rules of the type *‘if {up to five courses} then {one course}’*.
 
-Within the scope of this study, reference is frequently made to some indicators and metrics quantifying the relevance of a rule. These are concisely summarised here for ease of readability, whereby more thorough definitions and additional nuances can be found in the Appendix:
+Within the scope of this study, reference is frequently made to some indicators and metrics quantifying the relevance of a rule. These are concisely summarised here for ease of readability, whereby more thorough definitions and additional nuances can be found in the [Appendix](https://github.com/AlfaBetaBeta/Association-Rules#appendix):
 
 * Support(**X**):number of enrolments on course(s) **X** with respect to the total amount of tickets. When **X**=**A**, **X** might represent an itemset. When **X**=**C**, **X** signifies the support of a single consequent in the present context. This is called *prior* confidence.
 
@@ -36,7 +36,7 @@ Within the scope of this study, reference is frequently made to some indicators 
 
 ## Rule mining
 
-As elaborated in the Appendix, the total number of possible itemsets for the given item range (18) is 262,143 (excluding empty sets) and the total number of rules associating all these itemsets is 386,896,202. Handling over 386 million rules is evidently impractical and also unnecessary, as many of these rules are trivial, absurd, inactionable or a combination thereof. In order to mine sensible and practical rules, the implementation of the *apriori* algorithm embedded in `Apriori.ipynb` is used on the synthetic dataset. The functions defined in the notebook are largely based on the [mlxtend](https://github.com/rasbt/mlxtend/tree/master/mlxtend/frequent_patterns) python library, though modified to accommodate the following intended features:
+As elaborated in the [Appendix](https://github.com/AlfaBetaBeta/Association-Rules#appendix), the total number of possible itemsets for the given item range (18) is 262,143 (excluding empty sets) and the total number of rules associating all these itemsets is 386,896,202. Handling over 386 million rules is evidently impractical and also unnecessary, as many of these rules are trivial, absurd, inactionable or a combination thereof. In order to mine sensible and practical rules, the implementation of the *apriori* algorithm embedded in `Apriori.ipynb` is used on the synthetic dataset. The functions defined in the notebook are largely based on the [mlxtend](https://github.com/rasbt/mlxtend/tree/master/mlxtend/frequent_patterns) python library, though modified to accommodate the following intended features:
 
 * *Confidence difference* and *confidence ratio* are included amongst the controlling metrics in the relevant metric dictionary, in lieu of *leverage* and *conviction*.
 
@@ -99,7 +99,7 @@ As a preliminary step, the figures below show the distribution of courses over t
   <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/courses-per-ticket.png" width=50% height=50%>
 </p>
 
-A salient feature of these figures, if the sample is assumed to be representative, is that the vast majority of trainees enrol in 2 or 3 courses, with these mostly being introductory to intermediate level (as inferred by the course name in the absence of syllabus information). There is no distinct clustering scheme in the course histogram, although the main approximate trend is for more specialised courses to have lower support. Minimum and maximum support roughly correspond to 4% and 40%, respectively. Benchmark minimum thresholds of 10% and 20% for support conveniently split the course set into subsets in proportion 2:1, which is used when setting lift as the controlling metric.
+A salient feature of these figures, if the sample is assumed to be representative, is that the vast majority of trainees enrol in 2 or 3 courses, with these mostly being introductory to intermediate level (as inferred by the course name in the absence of syllabus information). There is no distinct clustering scheme in the course histogram, although the main approximate trend is for more specialised courses to have lower support. Minimum and maximum support roughly correspond to 0.04 and 0.4, respectively. Benchmark minimum thresholds of 0.1 and 0.2 for support conveniently split the course set into subsets in proportion 2:1, which is used when setting lift as the controlling metric.
 
 In this regard, the figure below summarises the number of rules arising from various combinations of minimum threshold values for confidence and support, for a minimum lift threshold of 1.0 and 0.5, respectively. From its definition, lift has no interest for values just around 1.0, as this implies independence between the probabilities of occurrence of **A** and **C**, and hence no rule can sensibly associate them. Lift values notably above or below 1.0 bear greater interest because they are indicative of rules, by **A** being either reinforcing or detrimental in the occurrence of **C**, respectively.
 
@@ -137,13 +137,31 @@ As anticipated, when resorting to confidence ratio as a metric, a large number o
 <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/confidence_ratio_lift_vs_confidence_c9.png" width=100% height=100%>
 
 
-
 ## Conclusions
 
-Under construction...
+Based on the preliminary results of ARA presented so far, and subject to further analysis stages, the following conclusions and recommendations can be drawn:
+
+* Most trainees progress by taking part in 2 or 3 courses at a time, with introductory to intermediate courses being the most demanded. These courses with high support should be complementary and not substitutive, which calls for careful planning of each syllabus and better course naming.
+* Once redefined and differentiated, {Intro to Statistic Platform} and {Intermediate Techniques} could be offered as a joint package, to ensure trainees actually partake in the most popular courses.
+* {Tables} seems to lead to {Intermediate Techniques} with reasonable confidence and yet has a much lower support, which means that trainees do not perceive it as a prerequisite. This needs to be addressed, either by rebranding the course or by merging both into a course of wider scope.
+* {Market segmentation} and {Classification and Clustering} seem to have the potential of constituting common crossroads in the learning path of many trainees. This intuitively calls for 'path offers' with suggested course sequences, using these two names as attractors, not just for the introductory courses leading to them but also for the ensuing specialisations with less support (e.g. {Neural Networks}).
 
 
 ## Appendix
+
+### Explicit expressions of exponential number of rules and the powerset over all transactions
+
+Given a total number of items N, the set of all possible itemsets is the power set over N, i.e. the number of itemsets (excluding empty sets) follows the exponential rule:
+
+<img src="https://render.githubusercontent.com/render/math?math=2^{N}-1">
+
+The number of rules over all itemsets in the power set over N also follows an exponential rule, as per below:
+
+<img src="https://render.githubusercontent.com/render/math?math=3^{N}-2^{N+1}+1">
+
+Substitution of <img src="https://render.githubusercontent.com/render/math?math=N=18"> in the expressions above directly yields the results mentioned in the [rule mining](https://github.com/AlfaBetaBeta/Association-Rules#rule-mining) section.
+
+### Detailed definitions and probabilistic interpretation of association parameters
 
 Under construction...
 
