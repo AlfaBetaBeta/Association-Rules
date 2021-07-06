@@ -182,3 +182,20 @@ Finally, as lift is defined in terms of the parameters above:
 <img src="https://render.githubusercontent.com/render/math?math=\text{Lift}(\{\boldsymbol{A}\} \implies \{\boldsymbol{C}\})=\frac{\text{Confidence}(\boldsymbol{A}\implies \boldsymbol{C})}{\text{Support}(\boldsymbol{C})}">
 
 it can be readily interpreted as an estimated measure of the increase in probability of enrolment in courses in <img src="https://render.githubusercontent.com/render/math?math=\{\boldsymbol{C}\}"> given enrolment in courses in <img src="https://render.githubusercontent.com/render/math?math=\{\boldsymbol{A}\}">.
+
+### Rule-based predictions
+
+The notebook `Rule-based-predictions.ipynb` contains the code necessary to incorporate predictions to the original sample of enrolment data, given a set of association rules mined as per `Apriori.ipynb`. A rule can only generate a prediction on a ticket entry if the two conditions below are both met:
+
+* The ticket itemset must contain the entirety of a rule's antecedent set.
+* The ticket itemset must be disjointed with a rule's consequent.
+
+Certain assumptions have been made for this purpose (e.g. only single consequents are considered), see the notes in `Rule-based-predictions.ipynb` for further clarification. Illustratively, the 870 rules arising from combination c1 and confidence ratio as metric (with the same visual encodings as in the [visualisation section](https://github.com/AlfaBetaBeta/Association-Rules#visualisation-and-rule-analysis)) are shown below, alongside the frequency of enrolment predictions based on said rules.
+
+<img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/confidence_ratio_lift_vs_confidence_c1.png" width=100% height=100%>
+
+<p align="middle">
+  <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/confidence_ratio_c1_predict.png" width=50% height=50%>
+</p>
+
+Overall consistency is maintained, as expected. Consequents attracting the highest number of rules tend to correspond to the most frequent predictions, particularly those with a higher average confidence (which is used as the discriminator when multiple rules apply to the same ticket). There are some notable cases, like `Intro to Statistic platform`, which is barely predicted despite having the highest average confidence. However, this could be explained by the fact that rules pointing to this consequent have a low support (between 1% and 2%), which is common when choosing the confidence ratio as the relevant metric.
