@@ -8,6 +8,9 @@
 * [Visualisation and rule analysis](https://github.com/AlfaBetaBeta/Association-Rules#visualisation-and-rule-analysis)
 * [Conclusions](https://github.com/AlfaBetaBeta/Association-Rules#conclusions)
 * [Appendix](https://github.com/AlfaBetaBeta/Association-Rules#appendix)
+    * [Explicit expressions of exponential number of rules and the powerset over all transactions](https://github.com/AlfaBetaBeta/Association-Rules#explicit-expressions-of-exponential-number-of-rules-and-the-powerset-over-all-transactions)
+    * [Detailed definitions and probabilistic interpretation of association parameters](https://github.com/AlfaBetaBeta/Association-Rules#detailed-definitions-and-probabilistic-interpretation-of-association-parameters)
+    * [Rule-based predictions](https://github.com/AlfaBetaBeta/Association-Rules#rule-based-predictions)
 
 
 ## Introduction
