@@ -193,7 +193,8 @@ The notebook `Rule-based-predictions.ipynb` contains the code necessary to incor
 Certain assumptions have been made for this purpose (e.g. only single consequents are considered), see the notes in `Rule-based-predictions.ipynb` for further clarification. Illustratively, the 870 rules arising from combination c1 and confidence ratio as metric (with the same visual encodings as in the [visualisation section](https://github.com/AlfaBetaBeta/Association-Rules#visualisation-and-rule-analysis)) are shown below, alongside the frequency of enrolment predictions based on said rules.
 
 <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/confidence_ratio_lift_vs_confidence_c1.png" width=100% height=100%>
-
+  <br/>
+  <br/>
 <p align="middle">
   <img src="https://github.com/AlfaBetaBeta/Association-Rules/blob/main/plots/confidence_ratio_c1_predict.png" width=50% height=50%>
 </p>
